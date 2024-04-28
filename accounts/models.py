@@ -9,6 +9,6 @@ class UserAccount(models.Model):
     created_on = models.DateField(auto_now_add=True, null=True, blank=True)
     
     def __str__(self):
-        return f'{self.user.username} : {self.user.first_name} : {self.user.last_name}'
-        
+        return f'{self.user.username} : {self.user.first_name}  {self.user.last_name}'
+
     

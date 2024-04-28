@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', cv.HomeView.as_view(), name='home'),
     path('accounts/', include('accounts.urls')),
+    path('transaction/', include('transaction.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

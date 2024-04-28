@@ -1,6 +1,6 @@
 from django.db import models
 from accounts.models import UserAccount
-from . contants import TRANSACTION_TYPES
+from .constants import TRANSACTION_TYPES
 # Create your models here.
 class Transaction(models.Model):
     user = models.ForeignKey(UserAccount, on_delete=models.CASCADE)
