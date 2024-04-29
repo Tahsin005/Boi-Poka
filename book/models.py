@@ -21,7 +21,7 @@ class Book(models.Model):
     image = models.ImageField(upload_to="myimage")
     first_published = models.DateField()
     language = models.ForeignKey(Language, on_delete=models.CASCADE, blank=True, null=True)
-    genre = models.ManyToManyField(Category, related_name='genres')
+    genres = models.ManyToManyField(Category, related_name='genres')
     
     def __str__(self) -> str:
         return f'Title : {self.title}'

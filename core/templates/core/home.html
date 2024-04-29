@@ -2,5 +2,8 @@
 
 {% block content %}
 
+    <div>
+        {% include 'book/show_books.html' with books=books %}
+    </div>
 
 {% endblock content %}

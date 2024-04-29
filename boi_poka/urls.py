@@ -22,6 +22,8 @@ from core import views as cv
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', cv.HomeView.as_view(), name='home'),
+    path('<str:genre>', cv.home, name='bookfilter'),
     path('accounts/', include('accounts.urls')),
     path('transaction/', include('transaction.urls')),
+    path('books/', include('book.urls')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
