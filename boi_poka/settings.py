@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'review',
     'transaction',
 ]
-
+CSRF_TRUSTED_ORIGINS = ['https://boi-poka.onrender.com','https://*.127.0.0.1']
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
