@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import environ
+import dj_database_url
 env = environ.Env()
 environ.Env.read_env()
 SECRET_KEY = env("SECRET_KEY")
@@ -29,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -88,17 +89,23 @@ WSGI_APPLICATION = 'boi_poka.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': env("DB_NAME"),
+#         'USER': env("DB_USER"),
+#         'PASSWORD': env("DB_PASSWORD"),
+#         'HOST': env("DB_HOST"),
+#         'PORT': env("DB_PORT"),
+#     }
+# }
+# Replace the SQLite DATABASES configuration with PostgreSQL:
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("DB_NAME"),
-        'USER': env("DB_USER"),
-        'PASSWORD': env("DB_PASSWORD"),
-        'HOST': env("DB_HOST"),
-        'PORT': env("DB_PORT"),
-    }
+    'default': dj_database_url.config(
+        # Replace this value with your local database's connection string.
+        default='postgres://boi_poka_user:jCOqLIpB72x5zhNIV8XZXFflJLAY7C1K@dpg-conpu4ocmk4c73aaq0h0-a.oregon-postgres.render.com/boi_poka',
+    )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
