@@ -5,10 +5,10 @@
         <div class="grid grid-cols-4 w-full gap-10">
             <div class="col-span-1">
                 <div class="flex justify-center">
-                    <img src="{{book.image.url}}" alt="book" class="w-3/4 object-contain">
+                    <img src="{{book.image.url}}" alt="book" class="rounded-r-xl w-3/4 object-contain">
                 </div>
                 <div class="mt-5">
-                    <a href="{% url "borrow_book" pk=book.pk %}"><button class="bg-indigo-600 text-white w-full font-medium rounded-full py-2">Borrow</button></a>
+                    <a href="{% url 'return_book' pk=book.pk %}"><button class="bg-red-600 text-white w-full font-medium rounded-full py-2">Return</button></a>
                 </div>
             </div>
             <div class="col-span-3">
@@ -46,11 +46,10 @@
                     </table>
                 </div>
                 <div class="mt-10">
-                    {% if reviews.all.count != 0 %}
                     <h2 class="text-2xl">Ratings and Reviews</h2>
-                    {% endif %}
                     <div class="mt-10">
-                        {% comment %} {% include 'reviews.html' with reviews=reviews %} {% endcomment %}
+                        {% comment %} {% include 'review.html' with form=review_form pk=book.pk reviews=reviews %}
+                        {% include 'reviews.html' with reviews=reviews %} {% endcomment %}
                     </div>
                 </div>
                 </div>

@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<div class="flex justify-center align-center mt-10">
+    <div style="width: 70%;">
+        <h3 class="text-2xl font-bold">Your Borrowed Books</h3>
+            <div class="grid grid-cols-4 mt-10 mb-10 gap-10">
+                {% for book in books %}
+                    <a href="{% url 'borrowed_book' pk=book.pk %}" class="shadow-xl">
+                        <div class="text-center">
+                            <img src="{{book.image.url}}" alt="" class="w-2/3 h-2/3">
+                        </div>
+                        <div class="w-2/3 mt-3">
+                            <h4 class="text-lg text-black font-medium">{{book.title}}</h4>
+                            <p class="font-lg text-sm h-11">${{book.price}}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+    </div>
+</div>
+
+
+{% endblock content %}
