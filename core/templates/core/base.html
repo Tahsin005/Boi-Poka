@@ -10,7 +10,6 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <style>
         footer {
-            position: fixed !important;
             bottom: 0 !important;
             width: 100%;
         }
@@ -19,7 +18,7 @@
 <body class="">
     {% include 'core/navbar.html' %}
     {% block body %}
-        <div class="lg:container lg:mx-auto">
+        <div class="lg:container lg:mx-auto min-h-screen mb-6">
         
         <!-- {% include 'core/messages.html' %} -->
             {% block content %}

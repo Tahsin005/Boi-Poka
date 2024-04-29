@@ -15,11 +15,11 @@
             </div>
         </div>
         <div>
-            <div class="grid grid-cols-3 mt-10 mb-10 gap-10 ">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-4 md:px-0 mt-10  gap-5 max-w-7xl">
                 {% for book in books %}
-                    <a href="{% url 'book_detail' pk=book.pk %}" class="shadow-xl">
+                    <a href="{% url 'book_detail' pk=book.pk %}" class="p-2 md:p-5 cursor-pointer border transition-all duration-700 rounded  overflow-hidden shadow-lg">
                         <div class="text-center">
-                            <img src="{{book.image.url}}" alt="" class="w-2/3 h-2/3">
+                            <img src="{{book.image.url}}" alt="" class=" h-2/3  w-full ">
                         </div>
                         <div class="w-2/3 mt-3">
                             <h4 class="text-lg text-white font-medium">{{book.title}}</h4>
