@@ -28,11 +28,11 @@ class BookDetailView(DetailView):
 @login_required
 def borrow_book(request, pk):
     book = get_object_or_404(Book, pk=pk)
-    request.user.account.borrowd_books.add(book)
     
     if request.user.account.balance < book.price:
         return  redirect('deposit_money')
     else:
+        request.user.account.borrowd_books.add(book)
         Transaction.objects.create(
             user = request.user.account,
             amount = book.price,
