@@ -46,10 +46,10 @@
                     </table>
                 </div>
                 <div class="mt-10">
-                    <h2 class="text-2xl">Ratings and Reviews</h2>
+                    <h2 class="text-2xl">Reviews</h2>
                     <div class="mt-10">
-                        {% comment %} {% include 'review.html' with form=review_form pk=book.pk reviews=reviews %}
-                        {% include 'reviews.html' with reviews=reviews %} {% endcomment %}
+                        {% include 'book/review.html' with form=review_form pk=book.pk reviews=reviews %}
+                        {% include 'book/reviews.html' with reviews=reviews %}
                     </div>
                 </div>
                 </div>
