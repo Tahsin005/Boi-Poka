@@ -25,10 +25,21 @@ Reviewing: Users can review books.
 Deployment
 The project is deployed on a preferred platform, ensuring accessibility.
 
+## Installation
+
+To install the necessary dependencies, run: (update need)
+
+## Running the Project
+
+To run the project, use the following command:
+
+```bash
+py manage.py runserver
+```
 
 Deployment Link: [Library Management System](https://boi-poka.onrender.com/)
 
-Technologies Used
-Django
-HTML/CSS
+## Technologies Used
+Django,
+HTML/CSS,
 Tailwind CSS
